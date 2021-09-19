@@ -1,0 +1,20 @@
+<Page navigatingTo="onNavigatingTo">
+   
+    <ActionBar title="Calculadora de Investimentos" icon=""  />
+
+    
+  <StackLayout backgroundColor="#3c495e">
+	  <StackLayout id="cdi" class="investments" verticalAlignment="center" height="25%" backgroundColor="orange" tap="goTo">
+  <label text="Pós-fixado (CDI)" />
+		  </StackLayout>
+	  <StackLayout id="cdi_juros" class="investments" verticalAlignment="center" height="25%" backgroundColor="green" tap="goTo">
+  <label text="Pós-fixado (CDI + Juros)" />
+		  </StackLayout>
+	  <StackLayout id="prefixado" class="investments" verticalAlignment="center" height="25%" backgroundColor="red" tap="goTo">
+  <label text="Prefixado" />
+		  </StackLayout>
+	  <StackLayout id="ipca" class="investments" verticalAlignment="center" height="25%" backgroundColor="blue" tap="goTo">
+  <label text="IPCA+" />
+		  </StackLayout> 
+</StackLayout>
+</Page>

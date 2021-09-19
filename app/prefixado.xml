@@ -1,0 +1,25 @@
+<Page navigatingTo="onNavigatingTo" loaded="loaded" xmlns:dd="nativescript-drop-down">
+   
+    <ActionBar class="actionbar" title="Prefixado">
+  <NavigationButton text="Voltar" android.systemIcon="ic_menu_back" tap="goBack"></NavigationButton>
+</ActionBar>
+
+    
+  <ScrollView>  orientation="vertical">
+<StackLayout tap="dismissSoftInput">	  
+  <label class="label select" text="Selecione um investimento"/>
+		  <dd:DropDown itemsPadding="5" class="dropdown" items="{{ investments }}" selectedIndex="{{ selectedIndex }}"/>
+	
+  <label class="label" text="Qual a quantia investida?"/>
+		  <TextField text="{{ amount }}" hint="Sem pontos, vírgulas ou centavos" />
+	 
+  <label class="label" text="Qual a taxa de juros?"/>
+		  <TextField text="{{ rates }}" hint="0" />
+	  
+  <label class="label" text="Quantos meses?"/>
+		  <TextField text="{{ months }}" hint="0" />
+	
+	  <Button text="CALCULAR" tap="calculate" class="calculate"/> 
+		  </StackLayout>
+</ScrollView>
+</Page>

@@ -1,0 +1,31 @@
+﻿@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+
+Button.-primary {
+  font-size: 18;
+}
+.investments {
+color: white;
+font-size: 25px;	
+text-align: center;	
+}
+.select {
+margin-top: 15px;	
+}
+.label {
+font-size: 18px;	
+text-align: center;	
+}
+.calculate {
+margin-bottom: 100px;
+background-color: #6c757d;
+color: white;	
+}
+.dropdown {
+font-size: 15px;	
+text-align: center;	
+margin-top: 20px;
+margin-bottom: 20px;
+width: 90%;
+}
