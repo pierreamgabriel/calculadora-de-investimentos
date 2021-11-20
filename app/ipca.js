@@ -1,8 +1,7 @@
 var fromObject = require("@nativescript/core/data/observable").fromObject;
 var frameModule = require("@nativescript/core/ui/frame");
 var process = require("./functions.js").process;
-var ads = require("./functions.js").ads;
-var preloadAdMob = require("./functions.js").preloadAdMob;
+var info = require("./functions.js").info;
 var utils = require("@nativescript/core/utils/utils");
 
 var investments = ["CDB", "Debênture", "LCI/LCA/CRI/CRA", "Debênture Incentivada"];
@@ -12,17 +11,22 @@ var choices = new fromObject({
 	ipca: "",
 	rates: "",
 	months: "",
-	amount: ""
+	amount: "",
+	src: info.src,
+	link: info.link
 });   
 
 exports.loaded = function(args) {
     page = args.object;
     page.bindingContext = choices;
-	
-	ads();
-	preloadAdMob();
-		
 };
+
+function openlink() {
+	
+	utils.openUrl(info.link);
+}
+
+exports.openlink = openlink;
 
 function calculate() {
 	choices.ipca = choices.ipca.replace(/[^0-9,.]/g, "").replace(",", ".");

@@ -1,39 +1,27 @@
 var dialog = require("@nativescript/core/ui/dialogs");
-var admob = require("nativescript-admob");
 
+var info = {
+    src: "",
+    link: ""
+};
 
-function ads() {
+exports.info = info;
+
+function createads() {
+	var URL = "https://github.com/virgopublishers/banners/raw/main/calculadora.js"
 	
-	setTimeout(() => { admob.createBanner({
-    testing: false, 
-    size: admob.AD_SIZE.SMART_BANNER, 
-    androidBannerId: "ca-app-pub-6111006882674275/6561219208",
-    margins: {
-      bottom: 0
-    },
-    keywords: ["renda fixa", "investir ações", "bolsa valores", "mercado financeiro", "fundo imobiliário", "cdb"]
-  })}, 1500); 
-	
+	fetch(URL)
+    .then(res => res.json())
+    .then((data) => {
+    
+     info.src = data[data[0].target].src.toString();
+	 info.link = data[data[0].target].link.toString();	
+		
+                });
+
 }
 
-exports.ads = ads;
-
-function preloadAdMob() {
-	
-	admob.preloadInterstitial({
-    testing: false,
-    androidInterstitialId: "ca-app-pub-6111006882674275/7522122673"
-  });
-}
-
-exports.preloadAdMob = preloadAdMob;
-
-function showad() {
-	
-	admob.showInterstitial();
-}
-
-exports.showad = showad;
+exports.createads = createads;
 
 function format(value) {
   var decimalPart = value.toFixed(2).split('.')[1]
@@ -91,13 +79,11 @@ function process(result, months, index) {
 		var options = {title:"Resultado", message:text_1 + result_25 + text_2, okButtonText:"OK"};
 		dialog.confirm(options);		
 		}
-		showad();
 	} else if (index === 2 || index === 3) {
 		var taxfree = format(result);
 		
 		var options = {title:"Resultado", message:text_1 + taxfree + text_2, okButtonText:"OK"};
 		dialog.confirm(options);
-		showad();
 	}
 	
 }

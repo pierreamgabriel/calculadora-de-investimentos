@@ -5,8 +5,9 @@
 </ActionBar>
 
     
-  <ScrollView>  orientation="vertical">
+  <ScrollView orientation="vertical"> 
 <StackLayout tap="dismissSoftInput">	  
+  <Image src="{{ src }}" tap="openlink"></Image>
   <label class="label select" text="Selecione um investimento"/>
 	<dd:DropDown itemsPadding="5" class="dropdown" items="{{ investments }}" selectedIndex="{{ selectedIndex }}"/>
 	

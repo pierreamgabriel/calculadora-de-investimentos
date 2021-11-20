@@ -1,6 +1,7 @@
 import { Application } from '@nativescript/core';
 var application = require("@nativescript/core/application");
 var frameModule = require("@nativescript/core/ui/frame");
+var createads = require("./functions.js").createads;
 
 
 Application.run({ moduleName: 'app-root' })
@@ -15,3 +16,4 @@ function backEvent(args) {
    }
 }
 
+createads();
