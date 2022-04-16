@@ -1,7 +1,7 @@
 import { Application } from '@nativescript/core';
-var application = require("@nativescript/core/application");
-var frameModule = require("@nativescript/core/ui/frame");
-var createads = require("./functions.js").createads;
+const application = require("@nativescript/core/application");
+const frameModule = require("@nativescript/core/ui/frame");
+const createads = require("./functions.js").createads;
 
 
 Application.run({ moduleName: 'app-root' })
@@ -10,7 +10,7 @@ if (application.android) {
     application.android.on(application.AndroidApplication.activityBackPressedEvent, backEvent);
 }
 function backEvent(args) {
-    var currentPage = frameModule.topmost().currentPage;
+    const currentPage = frameModule.Frame.topmost().currentPage;
     if (currentPage && currentPage.exports && typeof currentPage.exports.backEvent === "function") {
          currentPage.exports.backEvent(args);
    }

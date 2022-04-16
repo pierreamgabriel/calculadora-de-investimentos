@@ -1,11 +1,11 @@
-var fromObject = require("@nativescript/core/data/observable").fromObject;
-var frameModule = require("@nativescript/core/ui/frame");
-var process = require("./functions.js").process;
-var info = require("./functions.js").info;
-var utils = require("@nativescript/core/utils/utils");
+const fromObject = require("@nativescript/core/data/observable").fromObject;
+const frameModule = require("@nativescript/core/ui/frame");
+const process = require("./functions.js").process;
+const info = require("./functions.js").info;
+const utils = require("@nativescript/core/utils/utils");
 
-var investments = ["CDB", "Debênture", "LCI/LCA/CRI/CRA", "Debênture Incentivada"];
-var choices = new fromObject({
+const investments = ["CDB", "Debênture", "LCI/LCA/CRI/CRA", "Debênture Incentivada"];
+const choices = new fromObject({
 	investments: investments,
 	selectedIndex: "0",
 	rates: "",
@@ -21,7 +21,6 @@ exports.loaded = function(args) {
 };
 
 function openlink() {
-	
 	utils.openUrl(info.link);
 }
 
@@ -31,7 +30,7 @@ function calculate() {
 	choices.rates = choices.rates.replace(/[^0-9,.]/g, "").replace(",", ".");
 	choices.months = choices.months.replace(/[^0-9]/g, "");
 	choices.amount = choices.amount.replace(/[^0-9]/g, "");
-	var result = (parseInt(choices.amount) * Math.pow(1 + parseFloat(choices.rates)/100, parseInt(choices.months)/12)) - parseInt(choices.amount);
+	const result = (parseInt(choices.amount) * Math.pow(1 + parseFloat(choices.rates)/100, parseInt(choices.months)/12)) - parseInt(choices.amount);
 	
 	process(result, choices.months, choices.selectedIndex);
 	
@@ -40,7 +39,7 @@ exports.calculate = calculate;
 
 exports.backEvent = function(args) {
   args.cancel = true; 
-  frameModule.topmost().navigate({moduleName:"main-page",clearHistory: true }); 
+  frameModule.Frame.topmost().navigate({moduleName:"main-page",clearHistory: true }); 
   choices.rates = "";	
   choices.months = "";
   choices.amount = "";	
@@ -48,7 +47,7 @@ exports.backEvent = function(args) {
  
 }
 function goBack(){
-frameModule.topmost().navigate({moduleName:"main-page",clearHistory: true });    
+frameModule.Frame.topmost().navigate({moduleName:"main-page",clearHistory: true });    
   choices.rates = "";	
   choices.months = "";
   choices.amount = "";	
@@ -56,7 +55,7 @@ frameModule.topmost().navigate({moduleName:"main-page",clearHistory: true });
 }
 exports.goBack = goBack;
 
-function dismissSoftInput(args) {
+function dismissSoftInput() {
     utils.ad.dismissSoftInput();
 }
 exports.dismissSoftInput = dismissSoftInput;

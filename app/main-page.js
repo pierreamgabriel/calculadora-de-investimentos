@@ -1,19 +1,19 @@
-var frameModule = require("@nativescript/core/ui/frame");
+const frameModule = require("@nativescript/core/ui/frame");
 
 exports.goTo = function(id) {
 id = id.object.id;
 switch (id) {
     case "cdi":
-frameModule.topmost().navigate("cdi")   
+frameModule.Frame.topmost().navigate("cdi")   
     break;
     case "cdi_juros":
-frameModule.topmost().navigate("cdi-juros")   
+frameModule.Frame.topmost().navigate("cdi-juros")   
     break;
     case "prefixado":
-frameModule.topmost().navigate("prefixado")   
+frameModule.Frame.topmost().navigate("prefixado")   
     break;
     case "ipca":
-frameModule.topmost().navigate("ipca")   
+frameModule.Frame.topmost().navigate("ipca")   
     break; 
 }    
 }
