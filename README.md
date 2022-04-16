@@ -1,3 +1,10 @@
 # Calculadora de Investimentos
 
-Todos os direitos reservados. Você pode ler o código neste repositório, mas não pode utilizá-lo. Se você tem interesse no aplicativo, faça o download em https://play.google.com/store/apps/details?id=com.techstuff.calculadora
+Todos os direitos reservados.
+
+# Screenshots
+<p align="center">
+<img src="screenshots/screenshot1.jpg" height="400">
+<img src="screenshots/screenshot2.jpg" height="400">
+<img src="screenshots/screenshot3.jpg" height="400">
+</p>
