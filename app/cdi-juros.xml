@@ -1,4 +1,4 @@
-<Page navigatingTo="onNavigatingTo" loaded="loaded" xmlns:dd="nativescript-drop-down">
+<Page navigatingTo="onNavigatingTo" loaded="loaded" xmlns:dd="nativescript-drop-down" statusBarStyle="light">
    
     <ActionBar class="actionbar" title="Pós-fixado (CDI + Juros)">
   <NavigationButton text="Voltar" android.systemIcon="ic_menu_back" tap="goBack"></NavigationButton>
@@ -9,7 +9,9 @@
 <StackLayout tap="dismissSoftInput">
   <Image src="{{ src }}" tap="openlink"></Image>	
   <label class="label select" text="Selecione um investimento"/>
+  <StackLayout horizontalAlignment="stretch" class="dropdownContainer">
 		  <dd:DropDown itemsPadding="5" class="dropdown" items="{{ investments }}" selectedIndex="{{ selectedIndex }}"/>
+      </StackLayout>
 	
   <label class="label" text="Qual a quantia investida?"/>
 		  <TextField text="{{ amount }}" hint="Sem pontos, vírgulas ou centavos" />
