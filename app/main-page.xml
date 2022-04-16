@@ -1,6 +1,9 @@
 <Page navigatingTo="onNavigatingTo">
    
-    <ActionBar title="Calculadora de Investimentos" icon=""  />
+    <ActionBar android.icon="~/home-icon.png" android.iconVisibility="always"
+	backgroundColor="orange">
+	<Label text="Calculadora - Renda Fixa" fontSize="20" color="#ffffff"/>
+	</ActionBar>
 
     
   <StackLayout backgroundColor="#3c495e">
