@@ -1,9 +1,9 @@
 ﻿@import '@nativescript/theme/css/core.css';
 @import '@nativescript/theme/css/default.css';
 
-
-Button.-primary {
-  font-size: 18;
+.actionbar {
+background-color: orange;
+color: white;
 }
 .investments {
 color: white;
@@ -19,7 +19,7 @@ text-align: center;
 }
 .calculate {
 margin-bottom: 100px;
-background-color: #6c757d;
+background-color: orange;
 color: white;	
 }
 .dropdown {
@@ -27,5 +27,22 @@ font-size: 15px;
 text-align: center;	
 margin-top: 20px;
 margin-bottom: 20px;
+}
+.dropdownContainer {
+border-radius: 10px;
+border-width: 1;
+border-color: #ccc;
+margin-top: 10px;
+margin-bottom: 10px;
 width: 90%;
 }
+TextField {
+border-radius: 10px;
+border-width: 1;
+border-color: #ccc;
+padding-left: 5;
+padding-top: 5;
+padding-bottom: 5;
+height: 40;
+}
+
