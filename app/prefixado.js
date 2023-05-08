@@ -16,6 +16,7 @@ const choices = new fromObject({
 });   
 
 exports.loaded = function(args) {
+    let page;
     page = args.object;
     page.bindingContext = choices;	
 };
@@ -28,8 +29,8 @@ exports.openlink = openlink;
 
 function calculate() {
 	choices.rates = choices.rates.replace(/[^0-9,.]/g, "").replace(",", ".");
-	choices.months = choices.months.replace(/[^0-9]/g, "");
-	choices.amount = choices.amount.replace(/[^0-9]/g, "");
+	choices.months = choices.months.replace(/\D/g, "");
+	choices.amount = choices.amount.replace(/\D/g, "");
 	const result = (parseInt(choices.amount) * Math.pow(1 + parseFloat(choices.rates)/100, parseInt(choices.months)/12)) - parseInt(choices.amount);
 	
 	process(result, choices.months, choices.selectedIndex);
